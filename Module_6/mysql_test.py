@@ -2,13 +2,12 @@ import mysql.connector
 from mysql.connector import errorcode
 
 config = {
-    "user": "movies_user",
-    "password": "popcorn",
+    "user": "root",
+    "password": "Iheartme07!",
     "host": "127.0.0.1",
     "database": "movies",
     "raise_on_warnings": True
 }
-
 try:
     db = mysql.connector.connect(**config)
 
@@ -16,7 +15,7 @@ try:
 
     input("\n\n Press any key to continue...")
 
-except mysql.connector.Error as wee:
+except mysql.connector.Error as err:
     if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
         print(" The supplied username or password are invalid")
 
